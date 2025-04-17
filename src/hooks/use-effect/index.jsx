@@ -44,7 +44,13 @@ export const EffectExample = () => {
 
 
 
-// fetch data from an API immediately when the page renders
-// what's a "dependency list"?
-// https://www.youtube.com/watch?v=xfKYYRE6-TQ
-// UP TO: 20:08
+// It is a way to run code after something happens in your React component.
+// Fetch data from an API when the page loads
+
+// Set up a timer
+
+// Listen to window events (like resize)
+
+// Do anything that affects the outside world (not just returning JSX)
+
+

@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# useState Drills (20)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## const [thing, setThing] = useState("something");
 
-## Available Scripts
+1. Counter with Increment/Decrement Buttons
+   Hint: Keep track of a number that increases or decreases on button clicks.
 
-In the project directory, you can run:
+2. Toggle Visibility of Text
+   Hint: Manage a boolean state that shows or hides a paragraph.
 
-### `npm start`
+3. Input Field That Displays Typed Text in Real-Time
+   Hint: Update state with the onChange event from an input.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. Click counter that resets to 0 when it reaches 10.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+5. Form with first name and last name input fields, stored separately.
 
-### `npm test`
+6. Temperature converter between Celsius and Fahrenheit (one direction only).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+7. Show a warning message after clicking a button 5 times.
 
-### `npm run build`
+8. Dark mode toggle switch.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+9. Like button that toggles between "Like" and "Unlike."
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+10. Select dropdown that updates displayed text with the selected option.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+11. Show a list of tasks, and add to it using an input and button.
 
-### `npm run eject`
+12. Track the current number of characters typed into a textarea.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+13. Star rating component with 5 clickable stars.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+14. Update background color based on a color picker input.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+15. Show/hide password toggle on a password input field.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+16. Count how many times a user has clicked outside of a box.
 
-## Learn More
+17. Add/remove items in a list with a delete button beside each.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+18. Disable a submit button until a checkbox is checked.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+19. Display a random quote each time a button is pressed.
 
-### Code Splitting
+20. Manage state for tabs: switch between different content panels.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# useEffect Drills (20)
 
-### Analyzing the Bundle Size
+1. Log to console whenever the component renders or updates
+   Hint: Try using console.log inside the effect. What triggers re-renders?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Change the document title to show a count
+   Hint: Use state to track the count, and update the title inside useEffect.
 
-### Making a Progressive Web App
+3. Run a fetch call when the component mounts
+   Hint: Use the empty dependency array to run something only once.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. Run a timer that updates the screen every second.
 
-### Advanced Configuration
+5. Fetch user data from an API when a button is clicked.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+6. Cleanup a timer when the component unmounts.
 
-### Deployment
+7. Alert the user when they reach 100 clicks.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+8. Auto-focus an input field on page load.
 
-### `npm run build` fails to minify
+9. Save a form's data to localStorage when it changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+10. Load saved data from localStorage when the component mounts.
+
+11. Track the browser window's width and update it on resize.
+
+12. Track mouse movement and show coordinates on screen.
+
+13. Listen to the keydown event and show which key was pressed.
+
+14. Redirect to another page if a condition becomes true.
+
+15. Animate a value on state change using a timer.
+
+16. Debounce input changes (delay updating state while typing).
+
+17. Poll an API every 5 seconds until a condition is met.
+
+18. Log the previous value of a state variable.
+
+19. Show a message when the user goes offline.
+
+20. Detect when the component is mounted or unmounted (console message).
+
+# useReducer Drills (20)
+
+1. Counter using reducer logic
+   Hint: Replace useState with useReducer and dispatch actions like 'INCREMENT'.
+
+2. Toggle between light and dark mode
+   Hint: Set up a reducer that toggles between two themes using action types.
+
+3. Form with multiple inputs managed via reducer
+   Hint: Create an object state where each key represents an input field.
+
+4. Build a todo list with add, toggle complete, and delete actions.
+
+5. Shopping cart with add/remove item functionality.
+
+6. Quiz with next/prev question and track score.
+
+7. A tab system that stores the active tab in state.
+
+8. Undo/redo functionality for text editing.
+
+9. Modal toggle with open/close actions.
+
+10. Calculator state management (handle operations, result).
+
+11. Login form with success/error state handling.
+
+12. Voting system where each button increases a count per option.
+
+13. Like/dislike buttons using one reducer.
+
+14. Toggle several switches (light panel) using the same reducer.
+
+15. Load/save notes with action types like LOAD_NOTES, SAVE_NOTE.
+
+16. Email subscription form with validation status in reducer state.
+
+17. Accordion list with expanded/collapsed sections.
+
+18. Multiple counters managed in a single reducer.
+
+19. Manage form validation errors with reducer actions.
+
+20. State machine with multiple views (loading, error, success).

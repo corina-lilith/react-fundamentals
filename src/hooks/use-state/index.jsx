@@ -106,19 +106,88 @@
 //     }
 
 // 7. Show a warning message after clicking a button 5 times.
-import {useState} from "react";
+// import {useState} from "react";
 
-export const StateExample = () => {
-  const [clicks, setClicks] = useState(0)
+// export const StateExample = () => {
+//   const [clicks, setClicks] = useState(0)
 
-  const handleClick = () => {
-    setClicks(clicks + 1);
-      }
+//   const handleClick = () => {
+//     setClicks(clicks + 1);
+//       }
 
-  return (
-    <div className="general">
-      <button onClick={handleClick}>Click Me</button>
-      {clicks >= 5 && <p>⚠️ Warning! Too many clicks!</p>}
-    </div>
-  )
-}
+//   return (
+//     <div className="general">
+//       <button onClick={handleClick}>Click Me</button>
+//       {clicks >= 5 && <p>⚠️ Warning! Too many clicks!</p>}
+//     </div>
+//   )
+// }
+
+// 8. Dark mode toggle switch.
+// import {useState} from 'react';
+
+// export const StateExample = () => {
+//   const [isDarkMode, setIsDarkMode] = useState(false);
+
+//   const handleClick = () => {
+//     setIsDarkMode(!isDarkMode);
+//   }
+
+//   const styles = {
+//     backgroundColor: isDarkMode ? 'black' : 'white',
+//     color: isDarkMode ? 'white' : 'black',
+//     height: '100vh',
+//     display: 'flex',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     flexDirection: 'column'
+//   };
+
+//   return (
+//     <div style={styles}>
+//       <button onClick={handleClick}>
+//         {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+//       </button>
+//     </div>
+//   )
+// }
+
+// 9. Like button that toggles between "Like" and "Unlike."
+// import {useState} from 'react';
+
+// export const StateExample = () => {
+//   const [isLike, setIsLike] = useState(false);
+
+//   const handleClick = () => {
+//     setIsLike(!isLike)
+//   }
+
+//   return (
+//          <div className="general">
+//           <button onClick={handleClick}>
+//           {isLike ? 'Like' : 'Unlike'}
+//           </button>
+//         </div>
+//       );
+// }
+
+// 10. Select dropdown that updates displayed text with the selected option.
+// import {useState} from 'react';
+
+// export const StateExample = () => {
+//   const [category, setCategory] = useState();
+
+//   const handleCategoryChange = (category) => {
+//     setCategory(category);
+//     console.log(category);
+//   }
+
+//   return (
+//              <div className="general">
+//               <select name="category" value={category} onChange={event => handleCategoryChange(event.target.value)}>
+//                 <option id="0" >Personal</option>
+//                 <option id="1" >Work</option>
+//               </select>
+//             </div>
+//           );
+// }

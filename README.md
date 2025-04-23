@@ -60,9 +60,9 @@
 
 5. Fetch user data from an API when a button is clicked.
 
-6. Cleanup a timer when the component unmounts.
+6. Alert the user when they reach 100 clicks.
 
-7. Alert the user when they reach 100 clicks.
+7. Cleanup a timer when the component unmounts.
 
 8. Auto-focus an input field on page load.
 

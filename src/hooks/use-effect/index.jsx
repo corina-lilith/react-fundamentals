@@ -174,38 +174,128 @@
 // }
 
 // 4.2 Run a timer that updates the screen every second and adds to the minutes and hours
+// import {useState, useEffect} from 'react';
+
+// export const EffectExample = () => {
+//   const [time, setTime] = useState({hours: 0, minutes: 0, seconds: 0});
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setTime((prevTime) => {
+//         let newSeconds = prevTime.seconds + 1;
+//         let newMinutes = prevTime.minutes;
+//         let newHours = prevTime.hours;
+
+//         if (newSeconds === 60) {
+//           newSeconds = 0;
+//           newMinutes += 1;
+//         }
+
+//         if (newMinutes === 60) {
+//           newMinutes = 0;
+//           newHours += 1;
+//         }
+//         return {hours: newHours, minutes: newMinutes, seconds: newSeconds};
+//       });
+//     }, 1000);
+//     return () => clearInterval(interval);
+//   }, [])
+
+//   return (
+//         <div className="general">
+//           {String(time.hours).padStart(2, '0')}:
+//           {String(time.minutes).padStart(2, '0')}:
+//           {String(time.seconds).padStart(2, '0')}
+//         </div>
+//       )
+// }
+
+// 5. Fetch user data from an API when a button is clicked.
+// import {useState} from 'react';
+
+// export const EffectExample= () => {
+//   const [userId, setUserId] = useState(1);
+//   const [user, setUser] = useState(null);
+
+//   const getUserData = () => {
+//     fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+//       .then(response => response.json())
+//       .then(data => setUser(data))
+//       .catch(err => console.error("Fetch error:", err));
+
+//       setUserId((prevId) => (prevId % 10) + 1)
+//   };
+
+//   return (
+//     <div className="general">
+//      <button onClick={getUserData}>Get User #{userId}</button>
+//      {user && (
+//       <div>
+//         <h1>{user.name}</h1>
+//         <p>{user.email}</p>
+//         <p>{user.address.city}</p>
+//       </div>
+//      )}
+//     </div>
+//   );
+// };
+
+// 6. Alert the user when they reach 10 clicks = added a conditional button
+// import {useState, useEffect} from 'react';
+
+// export const EffectExample= () => {
+//   const [count, setCount] = useState(0);
+
+//   const increment = () => {
+//     setCount(prev => prev + 1);
+//   };
+
+//   useEffect(() => {
+//     if (count === 10) {
+//       alert("🎉 You reached 10 clicks!")
+//     }
+//   }, [count]);
+
+//   const reset = () => setCount(0);
+
+//   return (
+//     <div className="general">
+//       {count < 10 ? (
+//         <button onClick={increment}>Click Me {count}</button>
+//       ) : (
+//         <button onClick={reset}>Reset</button>
+//       )}
+//     </div>
+//   );
+// };
+
+// 7. Cleanup a timer when the component unmounts.
 import {useState, useEffect} from 'react';
 
+
 export const EffectExample = () => {
-  const [time, setTime] = useState({hours: 0, minutes: 0, seconds: 0});
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTime((prevTime) => {
-        let newSeconds = prevTime.seconds + 1;
-        let newMinutes = prevTime.minutes + 1;
-        let newHours = prevTime.hours;
-
-        if (newSeconds === 60) {
-          newSeconds = 0;
-          newMinutes += 1;
-        }
-
-        if (newMinutes === 60) {
-          newMinutes = 0;
-          newHours += 1;
-        }
-        return {hours: newHours, minutes: newMinutes, seconds: newSeconds};
-      });
+    // start the interval when the component mounts
+    const id = setInterval(() => {
+      setCount(prev => prev + 1);
     }, 1000);
-    return () => clearInterval(interval);
-  }, [])
+
+    // cleanup function: stop the interval when the component unmounts
+    return () => {
+      clearInterval(id);
+      console.log('⏹ Timer cleaned up!')
+    };
+  }, []); // empty dependency array = run once on mount
+
 
   return (
-        <div className="general">
-          {String(time.hours).padStart(2, '0')}:
-          {String(time.minutes).padStart(2, '0')}:
-          {String(time.seconds).padStart(2, '0')}
-        </div>
-      )
+    <div className="general">
+      <h1>{count}</h1>
+    </div>
+  )
 }
+// Starts a timer when the component mounts then increments the counter every second. When the component unmounts (disappears), the timer is stopped
+//
+

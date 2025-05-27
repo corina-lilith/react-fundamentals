@@ -191,3 +191,31 @@
 //             </div>
 //           );
 // }
+
+//11. Show a list of tasks, and add to it using an input and button.
+import {useState} from 'react';
+
+export const StateExample = () => {
+  const [task, setTask] = useState('');
+  const [tasks, setTasks] = useState([]);
+
+  const addTask = () => {
+    if (task.trim() !== '') {
+      setTasks([...tasks, task]);
+      setTask('');
+    }
+  };
+
+  return (
+    <div className="general">
+      <ul>
+        {tasks.map((t, index) => (
+          <li key={index}>{t}</li>
+        ))}
+      </ul>
+      <input onChange={(e) => setTask(e.target.value)} value={task} id="task" placeholder="New Task" />
+      <button onClick={addTask}>Add Task</button>
+    </div>
+  )
+}
+
